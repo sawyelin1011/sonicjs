@@ -20,6 +20,7 @@ export { helloWorldPlugin, createHelloWorldPlugin } from './hello-world-plugin'
 export { quillEditorPlugin, createQuillEditorPlugin } from './quill-editor'
 export { emailPlugin, createEmailPlugin } from './email-plugin'
 export { otpLoginPlugin, createOTPLoginPlugin } from './otp-login-plugin'
+export { analyticsExamplePlugin } from './analytics-example-plugin'
 
 // Core plugins list - now imported from auto-generated registry
 import { CORE_PLUGIN_IDS } from '../plugin-registry'
