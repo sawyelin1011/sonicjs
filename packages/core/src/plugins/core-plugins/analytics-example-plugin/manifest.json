@@ -1,0 +1,44 @@
+{
+  "id": "analytics-example",
+  "name": "Analytics Example Plugin",
+  "version": "1.0.0-example.1",
+  "description": "Comprehensive example plugin demonstrating all SonicJS plugin features including routes, hooks, services, database models, middleware, and admin pages",
+  "author": "SonicJS Team",
+  "homepage": "https://sonicjs.com/plugins/analytics-example",
+  "repository": "https://github.com/lane711/sonicjs-ai/tree/main/src/plugins/core-plugins/analytics-example-plugin",
+  "license": "MIT",
+  "category": "analytics",
+  "tags": ["example", "demo", "analytics", "tracking"],
+  "dependencies": [],
+  "settings": {
+    "enabled": true,
+    "trackingEnabled": true,
+    "retentionDays": 90
+  },
+  "hooks": {
+    "onActivate": "activate",
+    "onDeactivate": "deactivate"
+  },
+  "routes": [
+    {
+      "path": "/api/analytics",
+      "method": "POST",
+      "requiresAuth": false
+    },
+    {
+      "path": "/admin/analytics",
+      "method": "GET",
+      "requiresAuth": true
+    }
+  ],
+  "permissions": {
+    "analytics-example:view": "View analytics data",
+    "analytics-example:configure": "Configure analytics settings"
+  },
+  "adminMenu": {
+    "label": "Analytics Example",
+    "icon": "chart-bar",
+    "path": "/admin/analytics-example",
+    "order": 85
+  }
+}
