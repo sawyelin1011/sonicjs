@@ -1,0 +1,253 @@
+{
+  "id": "drizzle-plugin-multistore-payments-digital-downloads",
+  "name": "Multi-Store Payments & Digital Downloads",
+  "version": "1.0.0-beta.1",
+  "description": "Complete e-commerce solution with multi-store support, payment processing (Stripe/PayPal), and secure digital downloads",
+  "author": {
+    "name": "SonicJS Team",
+    "email": "team@sonicjs.com",
+    "url": "https://sonicjs.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/sonicjs/plugins",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sonicjs/plugins.git",
+    "directory": "packages/drizzle-plugin-multistore-payments-digital-downloads"
+  },
+  "category": "e-commerce",
+  "tags": [
+    "ecommerce",
+    "payments",
+    "stripe",
+    "paypal",
+    "digital-downloads",
+    "multi-store",
+    "shopping-cart",
+    "orders"
+  ],
+  "compatibility": "^2.0.0",
+  "dependencies": [],
+  "permissions": [
+    "store:create",
+    "store:read",
+    "store:update",
+    "store:delete",
+    "product:create",
+    "product:read",
+    "product:update",
+    "product:delete",
+    "order:read",
+    "order:update",
+    "payment:process",
+    "download:access"
+  ],
+  "adminMenu": [
+    {
+      "label": "Store Management",
+      "path": "/admin/store",
+      "icon": "shopping-cart",
+      "order": 75,
+      "permissions": ["store:manage"],
+      "children": [
+        {
+          "label": "Stores",
+          "path": "/admin/store",
+          "icon": "store"
+        },
+        {
+          "label": "Products",
+          "path": "/admin/store/products",
+          "icon": "package"
+        },
+        {
+          "label": "Orders",
+          "path": "/admin/store/orders",
+          "icon": "receipt"
+        }
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "path": "/api/store",
+      "description": "E-commerce API endpoints",
+      "requiresAuth": false
+    },
+    {
+      "path": "/admin/store",
+      "description": "Store management admin pages",
+      "requiresAuth": true
+    }
+  ],
+  "models": [
+    {
+      "name": "Store",
+      "tableName": "stores",
+      "description": "Multi-store management"
+    },
+    {
+      "name": "Product",
+      "tableName": "products",
+      "description": "Products with physical and digital types"
+    },
+    {
+      "name": "DigitalDownload",
+      "tableName": "digital_downloads",
+      "description": "Digital product file references"
+    },
+    {
+      "name": "Cart",
+      "tableName": "carts",
+      "description": "Shopping carts"
+    },
+    {
+      "name": "CartItem",
+      "tableName": "cart_items",
+      "description": "Shopping cart items"
+    },
+    {
+      "name": "Order",
+      "tableName": "orders",
+      "description": "Customer orders"
+    },
+    {
+      "name": "OrderItem",
+      "tableName": "order_items",
+      "description": "Order line items"
+    },
+    {
+      "name": "SecureDownloadLink",
+      "tableName": "secure_download_links",
+      "description": "Time-limited download tokens"
+    }
+  ],
+  "hooks": [
+    {
+      "name": "product:created",
+      "description": "Fired after a product is created"
+    },
+    {
+      "name": "order:paid",
+      "description": "Fired after an order payment is completed - used to generate download links"
+    },
+    {
+      "name": "product:delete",
+      "description": "Fired before product deletion"
+    }
+  ],
+  "services": [
+    {
+      "name": "DatabaseService",
+      "description": "Core database operations (CRUD for all entities)"
+    },
+    {
+      "name": "PaymentService",
+      "description": "Payment gateway integration (Stripe/PayPal)"
+    },
+    {
+      "name": "DigitalDownloadService",
+      "description": "Digital product and secure download management"
+    }
+  ],
+  "features": [
+    "Multi-store support",
+    "Physical and digital products",
+    "Shopping cart",
+    "Order management",
+    "Stripe payment integration",
+    "PayPal payment integration",
+    "Secure digital downloads",
+    "Cloudflare R2 file storage",
+    "Admin management pages",
+    "Role-based access control",
+    "Comprehensive security features"
+  ],
+  "requirements": {
+    "database": "SQLite (D1)",
+    "storage": "Cloudflare R2 (optional)",
+    "caching": "Cloudflare KV (optional)"
+  },
+  "configuration": {
+    "digital_download_expiry_days": {
+      "type": "number",
+      "default": 30,
+      "description": "Number of days download links remain valid"
+    },
+    "digital_download_max_downloads": {
+      "type": "number",
+      "default": 5,
+      "description": "Maximum number of times a download link can be used"
+    },
+    "stripe_enabled": {
+      "type": "boolean",
+      "default": false,
+      "description": "Enable Stripe payment processing"
+    },
+    "stripe_publishable_key": {
+      "type": "string",
+      "secret": true,
+      "description": "Stripe publishable key (test or live)"
+    },
+    "stripe_secret_key": {
+      "type": "string",
+      "secret": true,
+      "description": "Stripe secret key (test or live)"
+    },
+    "stripe_webhook_secret": {
+      "type": "string",
+      "secret": true,
+      "description": "Stripe webhook signing secret"
+    },
+    "stripe_mode": {
+      "type": "select",
+      "options": ["test", "live"],
+      "default": "test",
+      "description": "Stripe test or live mode"
+    },
+    "paypal_enabled": {
+      "type": "boolean",
+      "default": false,
+      "description": "Enable PayPal payment processing"
+    },
+    "paypal_client_id": {
+      "type": "string",
+      "secret": true,
+      "description": "PayPal application client ID"
+    },
+    "paypal_client_secret": {
+      "type": "string",
+      "secret": true,
+      "description": "PayPal application client secret"
+    },
+    "paypal_mode": {
+      "type": "select",
+      "options": ["sandbox", "live"],
+      "default": "sandbox",
+      "description": "PayPal sandbox or live mode"
+    }
+  },
+  "changelog": {
+    "1.0.0-beta.1": {
+      "date": "2024-01-15",
+      "changes": [
+        "Initial beta release",
+        "Multi-store management",
+        "Product management (physical and digital)",
+        "Shopping cart functionality",
+        "Order processing",
+        "Stripe payment integration",
+        "PayPal payment integration",
+        "Digital downloads with R2 support",
+        "Admin management pages",
+        "Comprehensive security features",
+        "Full test suite"
+      ]
+    }
+  },
+  "documentation": {
+    "readme": "./README.md",
+    "examples": "./EXAMPLE_USAGE.md",
+    "security": "./SECURITY.md"
+  }
+}
