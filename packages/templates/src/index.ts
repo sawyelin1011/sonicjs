@@ -26,3 +26,6 @@ export * from './admin/content-list.template'
 
 // Export glass admin template
 export * from './glass-admin.template'
+
+// Export CF-CMS.js Admin Templates (NEW - Production Ready)
+export * from './cf-cms-admin'
