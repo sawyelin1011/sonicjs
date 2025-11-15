@@ -1,7 +1,8 @@
 /**
  * Main Application Factory
  *
- * Creates a configured SonicJS application with all core functionality
+ * Creates a configured CF CMS application with all core functionality
+ * Includes dynamic plugin loading, e-commerce, and customization support
  */
 
 import { Hono } from 'hono'
