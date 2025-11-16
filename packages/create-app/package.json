@@ -1,10 +1,10 @@
 {
-  "name": "create-sonicjs",
-  "version": "2.0.10",
-  "description": "Create a new SonicJS application with zero configuration",
+  "name": "create-cf-cms",
+  "version": "3.0.0",
+  "description": "Create a new CF CMS application with zero configuration",
   "type": "module",
   "bin": {
-    "create-sonicjs": "./bin/create-sonicjs-app.js"
+    "create-cf-cms": "./bin/create-cf-cms-app.js"
   },
   "files": [
     "bin",
@@ -17,26 +17,28 @@
     "test": "node test-cli.js"
   },
   "keywords": [
-    "sonicjs",
+    "cf-cms",
     "cms",
     "create-app",
     "scaffolding",
     "cloudflare",
     "workers",
     "edge",
-    "headless-cms"
+    "headless-cms",
+    "plugin-system",
+    "ecommerce"
   ],
-  "author": "SonicJS Team",
+  "author": "CF CMS Team",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sonicjs/sonicjs.git",
+    "url": "https://github.com/cf-cms/cf-cms.git",
     "directory": "packages/create-app"
   },
   "bugs": {
-    "url": "https://github.com/sonicjs/sonicjs/issues"
+    "url": "https://github.com/cf-cms/cf-cms/issues"
   },
-  "homepage": "https://sonicjs.com",
+  "homepage": "https://cf-cms.dev",
   "dependencies": {
     "prompts": "^2.4.2",
     "kleur": "^4.1.5",

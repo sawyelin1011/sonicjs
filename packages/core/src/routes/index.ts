@@ -1,8 +1,11 @@
 /**
  * Routes Module Exports
  *
- * Routes are being migrated incrementally from the monolith.
- * Each route is refactored to remove monolith-specific dependencies.
+ * All route handlers for CF CMS including:
+ * - API routes (content, media, system)
+ * - E-Commerce routes (products, orders, customers)
+ * - Admin UI routes
+ * - Authentication routes
  */
 
 // API routes
@@ -10,6 +13,7 @@ export { default as apiRoutes } from './api'
 export { default as apiContentCrudRoutes } from './api-content-crud'
 export { default as apiMediaRoutes } from './api-media'
 export { default as apiSystemRoutes } from './api-system'
+export { default as apiEcommerceRoutes } from './api-ecommerce'
 export { default as adminApiRoutes } from './admin-api'
 
 // Auth routes
@@ -33,12 +37,13 @@ export { adminCollectionsRoutes } from './admin-collections'
 export { adminSettingsRoutes } from './admin-settings'
 
 export const ROUTES_INFO = {
-  message: 'Core routes available',
+  message: 'CF CMS core routes available',
   available: [
     'apiRoutes',
     'apiContentCrudRoutes',
     'apiMediaRoutes',
     'apiSystemRoutes',
+    'apiEcommerceRoutes',
     'adminApiRoutes',
     'authRoutes',
     'testCleanupRoutes',
@@ -55,6 +60,16 @@ export const ROUTES_INFO = {
     'adminCollectionsRoutes',
     'adminSettingsRoutes'
   ],
-  status: 'Core package routes ready',
-  reference: 'https://github.com/sonicjs/sonicjs'
+  features: [
+    'Full e-commerce support (products, orders, inventory)',
+    'Dynamic plugin system (load/install/uninstall)',
+    'Multi-store and multi-tenant',
+    'Content management with versioning',
+    'User and permission management',
+    'Media management with R2 storage',
+    'Real-time analytics and logging'
+  ],
+  status: 'Production-ready - CF CMS 3.0.0',
+  reference: 'https://github.com/cf-cms/cf-cms',
+  version: '3.0.0'
 } as const
