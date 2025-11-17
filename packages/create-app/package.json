@@ -1,10 +1,10 @@
 {
-  "name": "create-cf-cms",
+  "name": "@any-cms/create-app",
   "version": "3.0.0",
-  "description": "Create a new CF CMS application with zero configuration",
+  "description": "Create a new AnyCMS application with zero configuration",
   "type": "module",
   "bin": {
-    "create-cf-cms": "./bin/create-cf-cms-app.js"
+    "create-any-cms": "./bin/create-any-cms-app.js"
   },
   "files": [
     "bin",
@@ -17,28 +17,26 @@
     "test": "node test-cli.js"
   },
   "keywords": [
-    "cf-cms",
+    "any-cms",
     "cms",
     "create-app",
     "scaffolding",
-    "cloudflare",
-    "workers",
     "edge",
     "headless-cms",
     "plugin-system",
     "ecommerce"
   ],
-  "author": "CF CMS Team",
+  "author": "AnyCMS Team",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/cf-cms/cf-cms.git",
+    "url": "https://github.com/any-cms/any-cms.git",
     "directory": "packages/create-app"
   },
   "bugs": {
-    "url": "https://github.com/cf-cms/cf-cms/issues"
+    "url": "https://github.com/any-cms/any-cms/issues"
   },
-  "homepage": "https://cf-cms.dev",
+  "homepage": "https://any-cms.dev",
   "dependencies": {
     "prompts": "^2.4.2",
     "kleur": "^4.1.5",

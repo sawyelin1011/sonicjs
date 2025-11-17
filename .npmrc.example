@@ -1,0 +1,11 @@
+# NPM Configuration for @any-cms packages
+# Copy this file to .npmrc and add your npm token
+
+# Replace YOUR_NPM_TOKEN with your actual npm access token
+//registry.npmjs.org/:_authToken=YOUR_NPM_TOKEN
+
+# Configure @any-cms scope to use npm registry
+@any-cms:registry=https://registry.npmjs.org/
+
+# Allow legacy peer dependency resolution
+legacy-peer-deps=true

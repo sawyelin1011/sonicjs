@@ -1,7 +1,7 @@
 {
-  "name": "@cf-cms/core",
+  "name": "@any-cms/core",
   "version": "3.0.0",
-  "description": "Production-ready headless CMS core - Edge-first, TypeScript-native, fully dynamic plugin + theme system for Cloudflare Workers",
+  "description": "Production-ready headless CMS core - Edge-first, TypeScript-native, fully dynamic plugin + theme system",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -66,8 +66,6 @@
   "keywords": [
     "cms",
     "headless-cms",
-    "cloudflare",
-    "workers",
     "edge",
     "typescript",
     "hono",
@@ -76,19 +74,19 @@
     "plugin-system",
     "dynamic-theme",
     "ecommerce",
-    "cf-cms"
+    "any-cms"
   ],
-  "author": "CF CMS Team",
+  "author": "AnyCMS Team",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cf-cms/cf-cms.git",
+    "url": "git+https://github.com/any-cms/any-cms.git",
     "directory": "packages/core"
   },
   "bugs": {
-    "url": "https://github.com/cf-cms/cf-cms/issues"
+    "url": "https://github.com/any-cms/any-cms/issues"
   },
-  "homepage": "https://cf-cms.dev",
+  "homepage": "https://any-cms.dev",
   "peerDependencies": {
     "@cloudflare/workers-types": "^4.0.0",
     "hono": "^4.0.0",
