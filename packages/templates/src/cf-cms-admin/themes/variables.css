@@ -1,0 +1,811 @@
+/**
+ * CF-CMS.js Theme System
+ * 
+ * CSS variables and theme configurations for the admin UI
+ */
+
+// ============================================================================
+// Theme Variables - CSS Custom Properties
+// ============================================================================
+
+export const THEME_VARIABLES = `
+/* CF-CMS.js Admin Theme Variables */
+
+:root {
+  /* Brand Colors */
+  --cf-cms-primary-50: #eff6ff;
+  --cf-cms-primary-100: #dbeafe;
+  --cf-cms-primary-200: #bfdbfe;
+  --cf-cms-primary-300: #93c5fd;
+  --cf-cms-primary-400: #60a5fa;
+  --cf-cms-primary-500: #3b82f6;
+  --cf-cms-primary-600: #2563eb;
+  --cf-cms-primary-700: #1d4ed8;
+  --cf-cms-primary-800: #1e40af;
+  --cf-cms-primary-900: #1e3a8a;
+  --cf-cms-primary-950: #172554;
+
+  /* Secondary Colors */
+  --cf-cms-secondary-50: #f8fafc;
+  --cf-cms-secondary-100: #f1f5f9;
+  --cf-cms-secondary-200: #e2e8f0;
+  --cf-cms-secondary-300: #cbd5e1;
+  --cf-cms-secondary-400: #94a3b8;
+  --cf-cms-secondary-500: #64748b;
+  --cf-cms-secondary-600: #475569;
+  --cf-cms-secondary-700: #334155;
+  --cf-cms-secondary-800: #1e293b;
+  --cf-cms-secondary-900: #0f172a;
+  --cf-cms-secondary-950: #020617;
+
+  /* Success Colors */
+  --cf-cms-success-50: #f0fdf4;
+  --cf-cms-success-100: #dcfce7;
+  --cf-cms-success-200: #bbf7d0;
+  --cf-cms-success-300: #86efac;
+  --cf-cms-success-400: #4ade80;
+  --cf-cms-success-500: #22c55e;
+  --cf-cms-success-600: #16a34a;
+  --cf-cms-success-700: #15803d;
+  --cf-cms-success-800: #166534;
+  --cf-cms-success-900: #14532d;
+  --cf-cms-success-950: #052e16;
+
+  /* Warning Colors */
+  --cf-cms-warning-50: #fffbeb;
+  --cf-cms-warning-100: #fef3c7;
+  --cf-cms-warning-200: #fde68a;
+  --cf-cms-warning-300: #fcd34d;
+  --cf-cms-warning-400: #fbbf24;
+  --cf-cms-warning-500: #f59e0b;
+  --cf-cms-warning-600: #d97706;
+  --cf-cms-warning-700: #b45309;
+  --cf-cms-warning-800: #92400e;
+  --cf-cms-warning-900: #78350f;
+  --cf-cms-warning-950: #451a03;
+
+  /* Error Colors */
+  --cf-cms-error-50: #fef2f2;
+  --cf-cms-error-100: #fee2e2;
+  --cf-cms-error-200: #fecaca;
+  --cf-cms-error-300: #fca5a5;
+  --cf-cms-error-400: #f87171;
+  --cf-cms-error-500: #ef4444;
+  --cf-cms-error-600: #dc2626;
+  --cf-cms-error-700: #b91c1c;
+  --cf-cms-error-800: #991b1b;
+  --cf-cms-error-900: #7f1d1d;
+  --cf-cms-error-950: #450a0a;
+
+  /* Info Colors */
+  --cf-cms-info-50: #f0f9ff;
+  --cf-cms-info-100: #e0f2fe;
+  --cf-cms-info-200: #bae6fd;
+  --cf-cms-info-300: #7dd3fc;
+  --cf-cms-info-400: #38bdf8;
+  --cf-cms-info-500: #0ea5e9;
+  --cf-cms-info-600: #0284c7;
+  --cf-cms-info-700: #0369a1;
+  --cf-cms-info-800: #075985;
+  --cf-cms-info-900: #0c4a6e;
+  --cf-cms-info-950: #082f49;
+
+  /* Neutral Colors */
+  --cf-cms-white: #ffffff;
+  --cf-cms-gray-50: #f9fafb;
+  --cf-cms-gray-100: #f3f4f6;
+  --cf-cms-gray-200: #e5e7eb;
+  --cf-cms-gray-300: #d1d5db;
+  --cf-cms-gray-400: #9ca3af;
+  --cf-cms-gray-500: #6b7280;
+  --cf-cms-gray-600: #4b5563;
+  --cf-cms-gray-700: #374151;
+  --cf-cms-gray-800: #1f2937;
+  --cf-cms-gray-900: #111827;
+  --cf-cms-black: #000000;
+
+  /* Semantic Colors */
+  --cf-cms-primary: var(--cf-cms-primary-600);
+  --cf-cms-primary-hover: var(--cf-cms-primary-700);
+  --cf-cms-primary-active: var(--cf-cms-primary-800);
+  --cf-cms-secondary: var(--cf-cms-secondary-600);
+  --cf-cms-secondary-hover: var(--cf-cms-secondary-700);
+  --cf-cms-secondary-active: var(--cf-cms-secondary-800);
+  --cf-cms-success: var(--cf-cms-success-600);
+  --cf-cms-success-hover: var(--cf-cms-success-700);
+  --cf-cms-success-active: var(--cf-cms-success-800);
+  --cf-cms-warning: var(--cf-cms-warning-600);
+  --cf-cms-warning-hover: var(--cf-cms-warning-700);
+  --cf-cms-warning-active: var(--cf-cms-warning-800);
+  --cf-cms-error: var(--cf-cms-error-600);
+  --cf-cms-error-hover: var(--cf-cms-error-700);
+  --cf-cms-error-active: var(--cf-cms-error-800);
+  --cf-cms-info: var(--cf-cms-info-600);
+  --cf-cms-info-hover: var(--cf-cms-info-700);
+  --cf-cms-info-active: var(--cf-cms-info-800);
+
+  /* Background Colors */
+  --cf-cms-bg-primary: var(--cf-cms-white);
+  --cf-cms-bg-secondary: var(--cf-cms-gray-50);
+  --cf-cms-bg-tertiary: var(--cf-cms-gray-100);
+  --cf-cms-bg-inverse: var(--cf-cms-gray-900);
+  --cf-cms-bg-overlay: rgba(0, 0, 0, 0.5);
+  --cf-cms-bg-glass: rgba(255, 255, 255, 0.8);
+
+  /* Surface Colors */
+  --cf-cms-surface-primary: var(--cf-cms-white);
+  --cf-cms-surface-secondary: var(--cf-cms-gray-50);
+  --cf-cms-surface-tertiary: var(--cf-cms-gray-100);
+  --cf-cms-surface-inverse: var(--cf-cms-gray-800);
+  --cf-cms-surface-elevated: var(--cf-cms-white);
+  --cf-cms-surface-hover: var(--cf-cms-gray-50);
+  --cf-cms-surface-active: var(--cf-cms-gray-100);
+
+  /* Border Colors */
+  --cf-cms-border-primary: var(--cf-cms-gray-200);
+  --cf-cms-border-secondary: var(--cf-cms-gray-300);
+  --cf-cms-border-tertiary: var(--cf-cms-gray-100);
+  --cf-cms-border-inverse: var(--cf-cms-gray-700);
+  --cf-cms-border-focus: var(--cf-cms-primary-500);
+  --cf-cms-border-error: var(--cf-cms-error-500);
+  --cf-cms-border-success: var(--cf-cms-success-500);
+  --cf-cms-border-warning: var(--cf-cms-warning-500);
+
+  /* Text Colors */
+  --cf-cms-text-primary: var(--cf-cms-gray-900);
+  --cf-cms-text-secondary: var(--cf-cms-gray-600);
+  --cf-cms-text-tertiary: var(--cf-cms-gray-500);
+  --cf-cms-text-inverse: var(--cf-cms-white);
+  --cf-cms-text-disabled: var(--cf-cms-gray-400);
+  --cf-cms-text-placeholder: var(--cf-cms-gray-400);
+  --cf-cms-text-link: var(--cf-cms-primary-600);
+  --cf-cms-text-link-hover: var(--cf-cms-primary-700);
+  --cf-cms-text-error: var(--cf-cms-error-600);
+  --cf-cms-text-success: var(--cf-cms-success-600);
+  --cf-cms-text-warning: var(--cf-cms-warning-600);
+
+  /* Shadow Colors */
+  --cf-cms-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --cf-cms-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --cf-cms-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --cf-cms-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --cf-cms-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --cf-cms-shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --cf-cms-shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+  --cf-cms-shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+
+  /* Typography */
+  --cf-cms-font-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --cf-cms-font-family-mono: 'JetBrains Mono', 'Fira Code', 'Monaco', 'Cascadia Code', 'Segoe UI Mono', monospace;
+  --cf-cms-font-family-serif: 'Georgia', 'Times New Roman', serif;
+
+  /* Font Sizes */
+  --cf-cms-text-xs: 0.75rem;    /* 12px */
+  --cf-cms-text-sm: 0.875rem;   /* 14px */
+  --cf-cms-text-base: 1rem;     /* 16px */
+  --cf-cms-text-lg: 1.125rem;   /* 18px */
+  --cf-cms-text-xl: 1.25rem;    /* 20px */
+  --cf-cms-text-2xl: 1.5rem;    /* 24px */
+  --cf-cms-text-3xl: 1.875rem;  /* 30px */
+  --cf-cms-text-4xl: 2.25rem;   /* 36px */
+  --cf-cms-text-5xl: 3rem;      /* 48px */
+  --cf-cms-text-6xl: 3.75rem;   /* 60px */
+  --cf-cms-text-7xl: 4.5rem;    /* 72px */
+  --cf-cms-text-8xl: 6rem;      /* 96px */
+  --cf-cms-text-9xl: 8rem;      /* 128px */
+
+  /* Font Weights */
+  --cf-cms-font-thin: 100;
+  --cf-cms-font-extralight: 200;
+  --cf-cms-font-light: 300;
+  --cf-cms-font-normal: 400;
+  --cf-cms-font-medium: 500;
+  --cf-cms-font-semibold: 600;
+  --cf-cms-font-bold: 700;
+  --cf-cms-font-extrabold: 800;
+  --cf-cms-font-black: 900;
+
+  /* Line Heights */
+  --cf-cms-leading-none: 1;
+  --cf-cms-leading-tight: 1.25;
+  --cf-cms-leading-snug: 1.375;
+  --cf-cms-leading-normal: 1.5;
+  --cf-cms-leading-relaxed: 1.625;
+  --cf-cms-leading-loose: 2;
+
+  /* Spacing */
+  --cf-cms-space-0: 0;
+  --cf-cms-space-1: 0.25rem;   /* 4px */
+  --cf-cms-space-2: 0.5rem;    /* 8px */
+  --cf-cms-space-3: 0.75rem;   /* 12px */
+  --cf-cms-space-4: 1rem;      /* 16px */
+  --cf-cms-space-5: 1.25rem;   /* 20px */
+  --cf-cms-space-6: 1.5rem;    /* 24px */
+  --cf-cms-space-8: 2rem;      /* 32px */
+  --cf-cms-space-10: 2.5rem;   /* 40px */
+  --cf-cms-space-12: 3rem;     /* 48px */
+  --cf-cms-space-16: 4rem;     /* 64px */
+  --cf-cms-space-20: 5rem;     /* 80px */
+  --cf-cms-space-24: 6rem;     /* 96px */
+  --cf-cms-space-32: 8rem;     /* 128px */
+  --cf-cms-space-40: 10rem;    /* 160px */
+  --cf-cms-space-48: 12rem;    /* 192px */
+  --cf-cms-space-56: 14rem;    /* 224px */
+  --cf-cms-space-64: 16rem;    /* 256px */
+
+  /* Border Radius */
+  --cf-cms-radius-none: 0;
+  --cf-cms-radius-sm: 0.125rem;  /* 2px */
+  --cf-cms-radius: 0.25rem;     /* 4px */
+  --cf-cms-radius-md: 0.375rem; /* 6px */
+  --cf-cms-radius-lg: 0.5rem;   /* 8px */
+  --cf-cms-radius-xl: 0.75rem;  /* 12px */
+  --cf-cms-radius-2xl: 1rem;    /* 16px */
+  --cf-cms-radius-3xl: 1.5rem;  /* 24px */
+  --cf-cms-radius-full: 9999px;
+
+  /* Z-Index */
+  --cf-cms-z-dropdown: 1000;
+  --cf-cms-z-sticky: 1020;
+  --cf-cms-z-fixed: 1030;
+  --cf-cms-z-modal-backdrop: 1040;
+  --cf-cms-z-modal: 1050;
+  --cf-cms-z-popover: 1060;
+  --cf-cms-z-tooltip: 1070;
+  --cf-cms-z-toast: 1080;
+
+  /* Transitions */
+  --cf-cms-transition-colors: color 150ms ease-in-out, background-color 150ms ease-in-out, border-color 150ms ease-in-out;
+  --cf-cms-transition-opacity: opacity 150ms ease-in-out;
+  --cf-cms-transition-shadow: box-shadow 150ms ease-in-out;
+  --cf-cms-transition-transform: transform 150ms ease-in-out;
+  --cf-cms-transition-all: all 150ms ease-in-out;
+
+  /* Breakpoints */
+  --cf-cms-breakpoint-sm: 640px;
+  --cf-cms-breakpoint-md: 768px;
+  --cf-cms-breakpoint-lg: 1024px;
+  --cf-cms-breakpoint-xl: 1280px;
+  --cf-cms-breakpoint-2xl: 1536px;
+
+  /* Container */
+  --cf-cms-container-sm: 640px;
+  --cf-cms-container-md: 768px;
+  --cf-cms-container-lg: 1024px;
+  --cf-cms-container-xl: 1280px;
+  --cf-cms-container-2xl: 1536px;
+
+  /* Sidebar */
+  --cf-cms-sidebar-width: 16rem;  /* 256px */
+  --cf-cms-sidebar-collapsed-width: 4rem;  /* 64px */
+  --cf-cms-sidebar-bg: var(--cf-cms-surface-inverse);
+  --cf-cms-sidebar-text: var(--cf-cms-text-inverse);
+  --cf-cms-sidebar-border: var(--cf-cms-border-inverse);
+  --cf-cms-sidebar-hover: var(--cf-cms-surface-hover);
+
+  /* Header */
+  --cf-cms-header-height: 4rem;  /* 64px */
+  --cf-cms-header-bg: var(--cf-cms-surface-primary);
+  --cf-cms-header-border: var(--cf-cms-border-primary);
+  --cf-cms-header-shadow: var(--cf-cms-shadow-sm);
+
+  /* Forms */
+  --cf-cms-input-height: 2.5rem;  /* 40px */
+  --cf-cms-input-padding-x: var(--cf-cms-space-3);
+  --cf-cms-input-padding-y: var(--cf-cms-space-2);
+  --cf-cms-input-bg: var(--cf-cms-surface-primary);
+  --cf-cms-input-border: var(--cf-cms-border-primary);
+  --cf-cms-input-border-focus: var(--cf-cms-border-focus);
+  --cf-cms-input-text: var(--cf-cms-text-primary);
+  --cf-cms-input-placeholder: var(--cf-cms-text-placeholder);
+  --cf-cms-input-radius: var(--cf-cms-radius-md);
+
+  /* Buttons */
+  --cf-cms-button-height-sm: 2rem;   /* 32px */
+  --cf-cms-button-height: 2.5rem;   /* 40px */
+  --cf-cms-button-height-lg: 3rem;  /* 48px */
+  --cf-cms-button-padding-x-sm: var(--cf-cms-space-3);
+  --cf-cms-button-padding-x: var(--cf-cms-space-4);
+  --cf-cms-button-padding-x-lg: var(--cf-cms-space-6);
+  --cf-cms-button-radius: var(--cf-cms-radius-md);
+  --cf-cms-button-font-weight: var(--cf-cms-font-medium);
+
+  /* Cards */
+  --cf-cms-card-bg: var(--cf-cms-surface-primary);
+  --cf-cms-card-border: var(--cf-cms-border-primary);
+  --cf-cms-card-shadow: var(--cf-cms-shadow);
+  --cf-cms-card-radius: var(--cf-cms-radius-lg);
+  --cf-cms-card-padding: var(--cf-cms-space-6);
+
+  /* Tables */
+  --cf-cms-table-bg: var(--cf-cms-surface-primary);
+  --cf-cms-table-border: var(--cf-cms-border-primary);
+  --cf-cms-table-header-bg: var(--cf-cms-surface-secondary);
+  --cf-cms-table-row-hover: var(--cf-cms-surface-hover);
+  --cf-cms-table-row-selected: var(--cf-cms-primary-50);
+
+  /* Modals */
+  --cf-cms-modal-bg: var(--cf-cms-surface-primary);
+  --cf-cms-modal-backdrop: var(--cf-cms-bg-overlay);
+  --cf-cms-modal-shadow: var(--cf-cms-shadow-2xl);
+  --cf-cms-modal-radius: var(--cf-cms-radius-lg);
+  --cf-cms-modal-padding: var(--cf-cms-space-6);
+
+  /* Toasts */
+  --cf-cms-toast-bg: var(--cf-cms-surface-primary);
+  --cf-cms-toast-shadow: var(--cf-cms-shadow-lg);
+  --cf-cms-toast-radius: var(--cf-cms-radius-lg);
+  --cf-cms-toast-padding: var(--cf-cms-space-4);
+
+  /* Loading */
+  --cf-cms-loading-color: var(--cf-cms-primary);
+  --cf-cms-loading-size: 1.5rem;
+}
+
+/* Dark Theme Variables */
+[data-theme="dark"] {
+  --cf-cms-bg-primary: var(--cf-cms-gray-900);
+  --cf-cms-bg-secondary: var(--cf-cms-gray-800);
+  --cf-cms-bg-tertiary: var(--cf-cms-gray-700);
+  --cf-cms-bg-inverse: var(--cf-cms-gray-100);
+  --cf-cms-bg-glass: rgba(0, 0, 0, 0.8);
+
+  --cf-cms-surface-primary: var(--cf-cms-gray-800);
+  --cf-cms-surface-secondary: var(--cf-cms-gray-700);
+  --cf-cms-surface-tertiary: var(--cf-cms-gray-600);
+  --cf-cms-surface-inverse: var(--cf-cms-gray-200);
+  --cf-cms-surface-elevated: var(--cf-cms-gray-750);
+  --cf-cms-surface-hover: var(--cf-cms-gray-700);
+  --cf-cms-surface-active: var(--cf-cms-gray-600);
+
+  --cf-cms-border-primary: var(--cf-cms-gray-700);
+  --cf-cms-border-secondary: var(--cf-cms-gray-600);
+  --cf-cms-border-tertiary: var(--cf-cms-gray-800);
+  --cf-cms-border-inverse: var(--cf-cms-gray-300);
+
+  --cf-cms-text-primary: var(--cf-cms-gray-100);
+  --cf-cms-text-secondary: var(--cf-cms-gray-300);
+  --cf-cms-text-tertiary: var(--cf-cms-gray-400);
+  --cf-cms-text-inverse: var(--cf-cms-gray-900);
+  --cf-cms-text-disabled: var(--cf-cms-gray-500);
+  --cf-cms-text-placeholder: var(--cf-cms-gray-500);
+
+  --cf-cms-sidebar-bg: var(--cf-cms-gray-800);
+  --cf-cms-sidebar-text: var(--cf-cms-text-primary);
+  --cf-cms-sidebar-border: var(--cf-cms-border-primary);
+  --cf-cms-sidebar-hover: var(--cf-cms-surface-hover);
+
+  --cf-cms-header-bg: var(--cf-cms-surface-primary);
+  --cf-cms-header-border: var(--cf-cms-border-primary);
+
+  --cf-cms-input-bg: var(--cf-cms-surface-secondary);
+  --cf-cms-input-border: var(--cf-cms-border-primary);
+  --cf-cms-input-text: var(--cf-cms-text-primary);
+  --cf-cms-input-placeholder: var(--cf-cms-text-placeholder);
+
+  --cf-cms-card-bg: var(--cf-cms-surface-primary);
+  --cf-cms-card-border: var(--cf-cms-border-primary);
+
+  --cf-cms-table-bg: var(--cf-cms-surface-primary);
+  --cf-cms-table-border: var(--cf-cms-border-primary);
+  --cf-cms-table-header-bg: var(--cf-cms-surface-secondary);
+  --cf-cms-table-row-hover: var(--cf-cms-surface-hover);
+  --cf-cms-table-row-selected: var(--cf-cms-primary-900);
+
+  --cf-cms-modal-bg: var(--cf-cms-surface-primary);
+
+  --cf-cms-toast-bg: var(--cf-cms-surface-primary);
+}
+`
+
+// ============================================================================
+// Dark Theme CSS
+// ============================================================================
+
+export const DARK_THEME_CSS = `
+/* CF-CMS.js Dark Theme */
+
+[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+[data-theme="dark"] .cf-cms-theme-aware {
+  /* Background colors */
+  background-color: var(--cf-cms-bg-primary);
+  color: var(--cf-cms-text-primary);
+}
+
+[data-theme="dark"] .cf-cms-surface {
+  background-color: var(--cf-cms-surface-primary);
+  border-color: var(--cf-cms-border-primary);
+}
+
+[data-theme="dark"] .cf-cms-surface-secondary {
+  background-color: var(--cf-cms-surface-secondary);
+  border-color: var(--cf-cms-border-secondary);
+}
+
+[data-theme="dark"] .cf-cms-surface-hover:hover {
+  background-color: var(--cf-cms-surface-hover);
+}
+
+/* Text colors */
+[data-theme="dark"] .cf-cms-text-primary {
+  color: var(--cf-cms-text-primary);
+}
+
+[data-theme="dark"] .cf-cms-text-secondary {
+  color: var(--cf-cms-text-secondary);
+}
+
+[data-theme="dark"] .cf-cms-text-tertiary {
+  color: var(--cf-cms-text-tertiary);
+}
+
+/* Border colors */
+[data-theme="dark"] .cf-cms-border {
+  border-color: var(--cf-cms-border-primary);
+}
+
+[data-theme="dark"] .cf-cms-border-secondary {
+  border-color: var(--cf-cms-border-secondary);
+}
+
+/* Form elements */
+[data-theme="dark"] .cf-cms-input {
+  background-color: var(--cf-cms-input-bg);
+  border-color: var(--cf-cms-input-border);
+  color: var(--cf-cms-input-text);
+}
+
+[data-theme="dark"] .cf-cms-input::placeholder {
+  color: var(--cf-cms-input-placeholder);
+}
+
+[data-theme="dark"] .cf-cms-input:focus {
+  border-color: var(--cf-cms-input-border-focus);
+}
+
+/* Cards */
+[data-theme="dark"] .cf-cms-card {
+  background-color: var(--cf-cms-card-bg);
+  border-color: var(--cf-cms-card-border);
+}
+
+/* Tables */
+[data-theme="dark"] .cf-cms-table {
+  background-color: var(--cf-cms-table-bg);
+  color: var(--cf-cms-text-primary);
+}
+
+[data-theme="dark"] .cf-cms-table th {
+  background-color: var(--cf-cms-table-header-bg);
+  border-color: var(--cf-cms-table-border);
+}
+
+[data-theme="dark"] .cf-cms-table td {
+  border-color: var(--cf-cms-table-border);
+}
+
+[data-theme="dark"] .cf-cms-table tbody tr:hover {
+  background-color: var(--cf-cms-table-row-hover);
+}
+
+[data-theme="dark"] .cf-cms-table tbody tr.selected {
+  background-color: var(--cf-cms-table-row-selected);
+}
+
+/* Sidebar */
+[data-theme="dark"] .cf-cms-sidebar {
+  background-color: var(--cf-cms-sidebar-bg);
+  border-color: var(--cf-cms-sidebar-border);
+  color: var(--cf-cms-sidebar-text);
+}
+
+[data-theme="dark"] .cf-cms-sidebar .cf-cms-menu-item:hover {
+  background-color: var(--cf-cms-sidebar-hover);
+}
+
+/* Header */
+[data-theme="dark"] .cf-cms-header {
+  background-color: var(--cf-cms-header-bg);
+  border-color: var(--cf-cms-header-border);
+}
+
+/* Modals */
+[data-theme="dark"] .cf-cms-modal {
+  background-color: var(--cf-cms-modal-bg);
+  color: var(--cf-cms-text-primary);
+}
+
+/* Toasts */
+[data-theme="dark"] .cf-cms-toast {
+  background-color: var(--cf-cms-toast-bg);
+  color: var(--cf-cms-text-primary);
+}
+
+/* Scrollbar styling for dark theme */
+[data-theme="dark"] ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-track {
+  background: var(--cf-cms-surface-secondary);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: var(--cf-cms-border-primary);
+  border-radius: var(--cf-cms-radius);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+  background: var(--cf-cms-border-secondary);
+}
+`
+
+// ============================================================================
+// Light Theme CSS
+// ============================================================================
+
+export const LIGHT_THEME_CSS = `
+/* CF-CMS.js Light Theme */
+
+[data-theme="light"] {
+  color-scheme: light;
+}
+
+[data-theme="light"] .cf-cms-theme-aware {
+  /* Background colors */
+  background-color: var(--cf-cms-bg-primary);
+  color: var(--cf-cms-text-primary);
+}
+
+[data-theme="light"] .cf-cms-surface {
+  background-color: var(--cf-cms-surface-primary);
+  border-color: var(--cf-cms-border-primary);
+}
+
+[data-theme="light"] .cf-cms-surface-secondary {
+  background-color: var(--cf-cms-surface-secondary);
+  border-color: var(--cf-cms-border-secondary);
+}
+
+[data-theme="light"] .cf-cms-surface-hover:hover {
+  background-color: var(--cf-cms-surface-hover);
+}
+
+/* Text colors */
+[data-theme="light"] .cf-cms-text-primary {
+  color: var(--cf-cms-text-primary);
+}
+
+[data-theme="light"] .cf-cms-text-secondary {
+  color: var(--cf-cms-text-secondary);
+}
+
+[data-theme="light"] .cf-cms-text-tertiary {
+  color: var(--cf-cms-text-tertiary);
+}
+
+/* Border colors */
+[data-theme="light"] .cf-cms-border {
+  border-color: var(--cf-cms-border-primary);
+}
+
+[data-theme="light"] .cf-cms-border-secondary {
+  border-color: var(--cf-cms-border-secondary);
+}
+
+/* Form elements */
+[data-theme="light"] .cf-cms-input {
+  background-color: var(--cf-cms-input-bg);
+  border-color: var(--cf-cms-input-border);
+  color: var(--cf-cms-input-text);
+}
+
+[data-theme="light"] .cf-cms-input::placeholder {
+  color: var(--cf-cms-input-placeholder);
+}
+
+[data-theme="light"] .cf-cms-input:focus {
+  border-color: var(--cf-cms-input-border-focus);
+}
+
+/* Cards */
+[data-theme="light"] .cf-cms-card {
+  background-color: var(--cf-cms-card-bg);
+  border-color: var(--cf-cms-card-border);
+}
+
+/* Tables */
+[data-theme="light"] .cf-cms-table {
+  background-color: var(--cf-cms-table-bg);
+  color: var(--cf-cms-text-primary);
+}
+
+[data-theme="light"] .cf-cms-table th {
+  background-color: var(--cf-cms-table-header-bg);
+  border-color: var(--cf-cms-table-border);
+}
+
+[data-theme="light"] .cf-cms-table td {
+  border-color: var(--cf-cms-table-border);
+}
+
+[data-theme="light"] .cf-cms-table tbody tr:hover {
+  background-color: var(--cf-cms-table-row-hover);
+}
+
+[data-theme="light"] .cf-cms-table tbody tr.selected {
+  background-color: var(--cf-cms-table-row-selected);
+}
+
+/* Sidebar */
+[data-theme="light"] .cf-cms-sidebar {
+  background-color: var(--cf-cms-sidebar-bg);
+  border-color: var(--cf-cms-sidebar-border);
+  color: var(--cf-cms-sidebar-text);
+}
+
+[data-theme="light"] .cf-cms-sidebar .cf-cms-menu-item:hover {
+  background-color: var(--cf-cms-sidebar-hover);
+}
+
+/* Header */
+[data-theme="light"] .cf-cms-header {
+  background-color: var(--cf-cms-header-bg);
+  border-color: var(--cf-cms-header-border);
+}
+
+/* Modals */
+[data-theme="light"] .cf-cms-modal {
+  background-color: var(--cf-cms-modal-bg);
+  color: var(--cf-cms-text-primary);
+}
+
+/* Toasts */
+[data-theme="light"] .cf-cms-toast {
+  background-color: var(--cf-cms-toast-bg);
+  color: var(--cf-cms-text-primary);
+}
+
+/* Scrollbar styling for light theme */
+[data-theme="light"] ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+[data-theme="light"] ::-webkit-scrollbar-track {
+  background: var(--cf-cms-surface-secondary);
+}
+
+[data-theme="light"] ::-webkit-scrollbar-thumb {
+  background: var(--cf-cms-border-primary);
+  border-radius: var(--cf-cms-radius);
+}
+
+[data-theme="light"] ::-webkit-scrollbar-thumb:hover {
+  background: var(--cf-cms-border-secondary);
+}
+`
+
+// ============================================================================
+// Theme Configuration Interface
+// ============================================================================
+
+export interface ThemeConfig {
+  name: string
+  mode: 'light' | 'dark' | 'auto'
+  variables: Partial<ThemeVariables>
+  customCSS?: string
+}
+
+export interface ThemeVariables {
+  primary: string
+  secondary: string
+  success: string
+  warning: string
+  error: string
+  info: string
+  background: string
+  surface: string
+  text: string
+  textSecondary: string
+  border: string
+  shadow: string
+  radius: string
+  fontFamily: string
+  fontSize: string
+}
+
+// ============================================================================
+// Theme Presets
+// ============================================================================
+
+export const THEME_PRESETS: Record<string, ThemeConfig> = {
+  'cf-cms-default': {
+    name: 'CF-CMS.js Default',
+    mode: 'auto',
+    variables: {
+      primary: '#3b82f6',
+      secondary: '#64748b',
+      success: '#22c55e',
+      warning: '#f59e0b',
+      error: '#ef4444',
+      info: '#0ea5e9',
+      background: '#ffffff',
+      surface: '#ffffff',
+      text: '#111827',
+      textSecondary: '#6b7280',
+      border: '#e5e7eb',
+      shadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1)',
+      radius: '0.375rem',
+      fontFamily: "'Inter', sans-serif",
+      fontSize: '1rem'
+    }
+  },
+  'cf-cms-dark': {
+    name: 'CF-CMS.js Dark',
+    mode: 'dark',
+    variables: {
+      primary: '#3b82f6',
+      secondary: '#64748b',
+      success: '#22c55e',
+      warning: '#f59e0b',
+      error: '#ef4444',
+      info: '#0ea5e9',
+      background: '#111827',
+      surface: '#1f2937',
+      text: '#f9fafb',
+      textSecondary: '#d1d5db',
+      border: '#374151',
+      shadow: '0 1px 3px 0 rgba(0, 0, 0, 0.3)',
+      radius: '0.375rem',
+      fontFamily: "'Inter', sans-serif",
+      fontSize: '1rem'
+    }
+  },
+  'cf-cms-blue': {
+    name: 'CF-CMS.js Blue',
+    mode: 'light',
+    variables: {
+      primary: '#2563eb',
+      secondary: '#64748b',
+      success: '#16a34a',
+      warning: '#d97706',
+      error: '#dc2626',
+      info: '#0284c7',
+      background: '#ffffff',
+      surface: '#ffffff',
+      text: '#1e293b',
+      textSecondary: '#475569',
+      border: '#cbd5e1',
+      shadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1)',
+      radius: '0.375rem',
+      fontFamily: "'Inter', sans-serif",
+      fontSize: '1rem'
+    }
+  },
+  'cf-cms-green': {
+    name: 'CF-CMS.js Green',
+    mode: 'light',
+    variables: {
+      primary: '#16a34a',
+      secondary: '#64748b',
+      success: '#16a34a',
+      warning: '#d97706',
+      error: '#dc2626',
+      info: '#0284c7',
+      background: '#ffffff',
+      surface: '#ffffff',
+      text: '#1e293b',
+      textSecondary: '#475569',
+      border: '#cbd5e1',
+      shadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1)',
+      radius: '0.375rem',
+      fontFamily: "'Inter', sans-serif',
+      fontSize: '1rem'
+    }
+  }
+}
