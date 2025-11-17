@@ -1,7 +1,7 @@
 {
-  "name": "@sonicjs-cms/templates",
-  "version": "2.0.0",
-  "description": "Template system for SonicJS CMS",
+  "name": "@any-cms/template",
+  "version": "3.0.0",
+  "description": "Template system for AnyCMS",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
