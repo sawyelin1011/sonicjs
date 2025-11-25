@@ -21,6 +21,7 @@ export { quillEditorPlugin, createQuillEditorPlugin } from './quill-editor'
 export { emailPlugin, createEmailPlugin } from './email-plugin'
 export { otpLoginPlugin, createOTPLoginPlugin } from './otp-login-plugin'
 export { analyticsExamplePlugin } from './analytics-example-plugin'
+export { multiStorePaymentsPlugin, createMultiStorePaymentsPlugin } from './drizzle-plugin-multistore-payments-digital-downloads'
 
 // Core plugins list - now imported from auto-generated registry
 import { CORE_PLUGIN_IDS } from '../plugin-registry'
